@@ -1,0 +1,12 @@
+server:
+  port: 4444
+
+spring:
+    application:
+        name: config-server
+    cloud:
+        config:
+          name: config-server
+          server:
+            git:
+              uri: https://github.com/jcifu/ms-store-example/tree/config-server/config-server/src/main/resources

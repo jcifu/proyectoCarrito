@@ -1,0 +1,39 @@
+server:
+  port: 1111
+
+eureka:
+    client:
+        register-with-eureka: true
+        fetch-registry: false
+        
+        service-url:
+           defaultZone: http://localhost:8761/eureka #Se explicita ubicación en caso de tener que cambiarlo posteriormente        
+        
+
+    instance:
+        status-page-url-path: /infoProducts
+        health-check-url-path: /healthProducts
+spring:         
+    jpa:
+        database: MYSQL
+        database-platform:
+        show-sql: true 
+        hibernate:
+            ddl-auto: none 
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost/products?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+        username: root
+        password:
+    main:
+        banner-mode: off
+
+logging:
+  level:
+    '[org.springframework.web]':
+        servlet:
+            mvc:
+                '[method.annotation]': TRACE 
