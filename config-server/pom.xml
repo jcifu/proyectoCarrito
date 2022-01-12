@@ -8,26 +8,27 @@
 		<version>2.6.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example.store</groupId>
-	<artifactId>eureka-ms</artifactId>
+	<groupId>com.jcifu.store.configserver</groupId>
+	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>eureka-ms</name>
-	<description>Eureka Server Microservice for Store</description>
+	<name>configserver</name>
+	<description>Config Server for Store</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
-		<dependency> <!-- jaxb no soportado por java 11, hay que agregarla -->
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
